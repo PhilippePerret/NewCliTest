@@ -4,9 +4,10 @@ module NewCliTest
 
   # Raccourci pour lancer les tests
   def self.run
+    # puts "-> NewCliTest::run"
     clear
     load_tests
-    Test.run 
+    Test.run
   end
 
   ##

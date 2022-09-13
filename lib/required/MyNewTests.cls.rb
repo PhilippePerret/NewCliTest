@@ -22,6 +22,8 @@ class << self
       # rapport.
       @end_time = Time.now.to_f
       report
+    ensure
+      ENV['MODE_CLI_TEST'] = 'false'
     end
   rescue Exception => e
     puts e.message.rouge

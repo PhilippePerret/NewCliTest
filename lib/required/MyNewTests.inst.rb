@@ -110,7 +110,7 @@ class Test
         else
           "la commande a échoué avec le code d'erreur #{exitstatus}."
         end
-      err = "Impossible de tester, #{err}" 
+      err = "Impossible de tester, #{err}\n### Erreur retournée : '#{res_command.rouge}'"
       raise RegularTestError.new(err)
       
     end
@@ -122,7 +122,7 @@ class Test
   def print_error_report(indexError)
     puts "\n\n"
     titre = "Error ##{indexError + 1}"
-    puts "#{titre}\n#{'-'*titre.length}".rouge + (' '*40) + "#{from.relpath}::#{from.line}".gris
+    puts "#{titre}\n#{'-'*titre.length}".rouge + (' '*4) + "#{from.relpath}::#{from.line}".gris
     puts @description.rouge
     puts @error.rouge
   end
